@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		625BA560272907380052C4D6 /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA55F272907380052C4D6 /* HeaderSection.swift */; };
+		625BA563272907E80052C4D6 /* VideosTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA562272907E80052C4D6 /* VideosTabViewModel.swift */; };
 		629B18CC27161A0D00BBA535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B18CB27161A0D00BBA535 /* AppDelegate.swift */; };
 		629B18CE27161A0D00BBA535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B18CD27161A0D00BBA535 /* SceneDelegate.swift */; };
-		629B18D027161A0D00BBA535 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B18CF27161A0D00BBA535 /* VideosViewController.swift */; };
+		629B18D027161A0D00BBA535 /* VideosTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B18CF27161A0D00BBA535 /* VideosTabViewController.swift */; };
 		629B18D327161A0D00BBA535 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629B18D127161A0D00BBA535 /* Main.storyboard */; };
 		629B18D527161A1000BBA535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629B18D427161A1000BBA535 /* Assets.xcassets */; };
 		629B18D827161A1000BBA535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629B18D627161A1000BBA535 /* LaunchScreen.storyboard */; };
@@ -18,10 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		625BA55F272907380052C4D6 /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
+		625BA562272907E80052C4D6 /* VideosTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosTabViewModel.swift; sourceTree = "<group>"; };
 		629B18C827161A0D00BBA535 /* EpicAppVideoTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicAppVideoTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629B18CB27161A0D00BBA535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629B18CD27161A0D00BBA535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		629B18CF27161A0D00BBA535 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		629B18CF27161A0D00BBA535 /* VideosTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosTabViewController.swift; sourceTree = "<group>"; };
 		629B18D227161A0D00BBA535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		629B18D427161A1000BBA535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629B18D727161A1000BBA535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		625BA561272907D50052C4D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				625BA562272907E80052C4D6 /* VideosTabViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		629B18BF27161A0D00BBA535 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +95,10 @@
 		629B18E4271637A200BBA535 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				625BA561272907D50052C4D6 /* ViewModel */,
 				629B18E5271637AE00BBA535 /* VideosViewController */,
 				629B18E32716379500BBA535 /* HeaderView */,
+				625BA55F272907380052C4D6 /* HeaderSection.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -92,7 +106,7 @@
 		629B18E5271637AE00BBA535 /* VideosViewController */ = {
 			isa = PBXGroup;
 			children = (
-				629B18CF27161A0D00BBA535 /* VideosViewController.swift */,
+				629B18CF27161A0D00BBA535 /* VideosTabViewController.swift */,
 			);
 			path = VideosViewController;
 			sourceTree = "<group>";
@@ -169,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				629B18D027161A0D00BBA535 /* VideosViewController.swift in Sources */,
+				625BA563272907E80052C4D6 /* VideosTabViewModel.swift in Sources */,
+				625BA560272907380052C4D6 /* HeaderSection.swift in Sources */,
+				629B18D027161A0D00BBA535 /* VideosTabViewController.swift in Sources */,
 				629B18CC27161A0D00BBA535 /* AppDelegate.swift in Sources */,
 				629B18CE27161A0D00BBA535 /* SceneDelegate.swift in Sources */,
 				629B18E127161E0000BBA535 /* HeaderView.swift in Sources */,

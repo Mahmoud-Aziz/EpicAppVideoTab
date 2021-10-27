@@ -5,9 +5,12 @@
 //  Created by Mahmoud Aziz on 12/10/2021.
 //
 
+
+//MARK: Video tap UI using compositional layout collection view.
+
 import UIKit
 
-class VideosViewController: UIViewController {
+class VideosTabViewController: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
@@ -33,35 +36,14 @@ class VideosViewController: UIViewController {
     func createSectionFor(index: Int, enviroment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         switch index {
         case 0:
-            return createFirstSection()
+            return HeaderSection.createHeaderSection()
         case 1...9:
             return createRestOfSections()
         default:
             return createRestOfSections()
         }
     }
-    
-    //MARK: Create first section (Header section) method:
-    func createFirstSection() -> NSCollectionLayoutSection {
-        
-        let inset: CGFloat = 2.5
-        
-        //item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-        
-        //group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.23))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        //section
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .groupPaging
-        
-        return section
-    }
-    
+
     //MARK: Create the rest of sections method:
     func createRestOfSections() -> NSCollectionLayoutSection {
         
@@ -88,8 +70,8 @@ class VideosViewController: UIViewController {
     }
 }
 
-//MARK: CollectionView datasource conformance:
-extension VideosViewController: UICollectionViewDataSource {
+//MARK: CollectionView datasource methods:
+extension VideosTabViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         10
@@ -112,30 +94,10 @@ extension VideosViewController: UICollectionViewDataSource {
         guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: "HeaderView", for: indexPath) as? HeaderView else {
             return UICollectionReusableView()
         }
-        view.title = {
-            switch indexPath.section {
-            case 1:
-                return "Top Picks: Videos"
-            case 2:
-                return "Pets"
-            case 3:
-                return "Sports"
-            case 4:
-                return "Arts, Crafts & DIY"
-            case 5:
-                return "Science"
-            case 6:
-                return "Adventure"
-            case 7:
-                return "Fantasy & Science Fiction"
-            case 8:
-                return "Laugh Out Loud"
-            case 9:
-                return "Spooky"
-            default:
-                return ""
-            }
-        }()
+
+        let titles: [Title] = [Title(firstSectionTitle: "Top Picks: Videos", secondSectionTitle: "Pets", thirdSectionTitle: "Sports", fourthSectionTitle: "Arts, Crafts & DIY", fifthSectionTitle: "Science", sixthSectionTitle: "Adventure", seventhSectionTitle: "Fantasy & Science Fiction", eightsSectionTitle: "Laugh Out Loud", ninethSectionTitle: "Spooky")]
+
+        view.title = VideosTabViewModel.HeaderViewTitle(headerView: view, indexPath: indexPath, titles: titles)
         return view
     }
 }
